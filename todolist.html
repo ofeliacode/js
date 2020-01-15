@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+     input{
+         display: none;
+     }
+     input.active{
+         display: inline-block;
+     }
+</style>
+<body>
+    <h1>To-Do List</h1>
+	<div class="container">
+		<ul id="list">
+            <li>Some text</li>
+        </ul>
+        <button id="button">Добавить пункт в список</button>
+        <input id="item" type="text">
+        <button id="sent">Отправить</button>
+	</div>
+</body>
+<script>
+  const button = document.getElementById("button");
+  const list = document.getElementById("list");
+  const sent = document.getElementById("sent");
+  const input = document.getElementById("item");
+  button.addEventListener ('click', todo);
+    function todo(){
+       input.classList.add("active")
+    }
+    sent.addEventListener ('click', data);
+    function data(){
+        if(input.value !== ''){
+            list.insertAdjacentHTML('afterbegin', `<li>`+ input.value + `</li>`)
+        } else if (input.value == ''){
+        list.insertAdjacentHTML('afterbegin', `<li>`+ "default text" + `</li>`)}
+     };
+</script>
+</html>
