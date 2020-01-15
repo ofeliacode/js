@@ -1,0 +1,118 @@
+body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img,abbr{border:0;}address,caption,cite,code,dfn,em,strong,th,var {font-style:normal;font-weight:normal;}ul li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}legend{color:#000;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
+
+:-ms-input-placeholder{color:#757575;}
+:-webkit-input-placeholder{color:#757575;}
+
+html, body{height:100%; font-family:Roboto; font-size:15px; color:#000;}
+a{text-decoration:none; outline:none;}
+a img{border:none; outline:none;}
+ul{list-style:none;}
+p{margin:0 0 14px;}
+
+/* ---------------------------------------------------------------------------------------------------------------  */
+
+h1{font-size: 26px; margin: 10px 0;}
+.clear{clear: both;}
+.clearfix:after{clear: both;display:block;content:"";}
+
+/* ---------------------------------------------------------------------------------------------------------------  */
+
+.wrapper{position: relative;max-width: 1172px;margin: 0 auto;}
+
+
+header{display: flex;justify-content: space-around;}
+
+header{
+    height: inherit;
+    overflow: hidden;
+    position: relative;
+    padding: 0 20px;
+    top: 30px;
+}
+
+span.h3{display: inline-block; font-size: 18px; padding: 10px 0;}
+
+/* ---------------------------------------------------------------------------------------------------------------  */
+
+header{background: #ffffff;padding: 20px 0;}
+nav{background: rgb(255, 255, 255);}
+
+/* ---------------------------------------------------------------------------------------------------------------  */
+
+header{color: #fff;}
+header .logo{position:relative;top: -19px;right: 6px;width: 171px;height: 93px;background: url(../img/logo.png) center no-repeat;background-size: 100%;}
+header .signin{ width: 325px; height: 45px; background: url(../img/signin.png) center no-repeat; background-size: 100%;}
+header .basket{ width: 45px; height: 45px; background: url(../img/basket.png) center no-repeat; background-size: 100%; margin-right: 10px;}
+header .title{color: #4692ce;font-size: 14px; text-decoration:underline;}
+header .phone{color: #343f53;font-size: 14px;}
+header .mail{ width: 31px; height: 22px; background: url(../img/mail.png) center no-repeat; background-size: 100%;}
+header .layer{width: 1px;height: 45px;background: url(../img/layer.png) center no-repeat;background-size: 100%;margin: 0 20px;}
+header .mailbox{display: flex;margin-right: 10px;}
+header .mail{margin-right: 10px;}
+header .korzina{display: flex;}
+header .callback{color: #4692ce;font-size: 14px;padding-top: 17px;text-decoration:underline;text-align: right;}
+header .partnership{color: #4692ce;font-size: 14px; padding-top: 19px; padding-bottom: 17px;text-decoration:underline;}
+header .mailadress{color: #4692ce;font-size: 18px;   align-self: center; text-decoration:underline;}
+header .title2{color: #343f53;}
+header span.title2-blue{color: #4692ce; text-decoration:underline;}
+header span.title2bold{font-weight: bold;}
+header .contacts-text {
+    display: flex;
+}
+
+
+.login {
+    background: #4692ce;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0 10px;
+}
+
+.login span {
+    content: "";
+    display: block;
+    width: 21px;
+    height: 25px;
+    background: url("/img/[icon]_sign_in.png");
+    z-index: 1;
+    padding-right: 10px;
+    background-repeat: no-repeat;
+    position: relative;
+    top: -2px;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------  */
+
+@media (max-width: 1200px) {
+    header {
+        display: block;
+        text-align: center;
+    }
+    header .logo {
+        margin: 0 auto;
+    }
+    header .layer {
+        display: none;
+    }
+    header .project, header .diler {
+        display: block;
+        width: 50%;
+        float: left;
+    }
+    header .callback {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .login {
+        display: inline-flex;
+        padding: 15px 15px 10px;
+    }
+    header .korzina {
+        display: inline-flex;
+    }
+    header .mailbox {
+        display: inline-flex;
+        margin-bottom: 20px;
+    }
+}
