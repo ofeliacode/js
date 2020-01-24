@@ -7,39 +7,88 @@
     <title>Document</title>
 </head>
 <style>
+span {
+    color: white;
+    background-color: grey;
+    border: 2px solid black;
+    font-size: 14px;
+    padding: 3px;
+}                             
      input{
          display: none;
      }
      input.active{
          display: inline-block;
      }
+   ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+    ul li {
+      padding: 5px;
+  color: #2e2f30;
+  font-weight: 400;
+}
+ul li:before {
+  content: "\25A1";
+  padding: 10px 10px;
+  font-size: 20px;
+}
+.block__list-delete{
+  position: absolute;
+  left: 141px;
+  top: 83px;
+  background-color: red;
+  color:white;
+  cursor: pointer;
+  border-radius: 3px;
+  width: 10%;
+  text-align: center;
+  line-height:20px ;
+  display: block;
+}
 </style>
 <body>
     <h1>To-Do List</h1>
 	<div class="container">
 		<ul id="list">
-            <li>Some text</li>
+            <li>Some text
+              <span>удалить</span>
+            </li>
         </ul>
-        <button id="button">Добавить пункт в список</button>
+        <button id="buttonfirst">Добавить пункт в список</button>
         <input id="item" type="text">
         <button id="sent">Отправить</button>
 	</div>
 </body>
 <script>
-  const button = document.getElementById("button");
+  const buttonfirst = document.getElementById("buttonfirst"); // Будет лишним
   const list = document.getElementById("list");
   const sent = document.getElementById("sent");
   const input = document.getElementById("item");
-  button.addEventListener ('click', todo);
+  buttonfirst.addEventListener ('click', todo);
     function todo(){
        input.classList.add("active")
     }
     sent.addEventListener ('click', data);
     function data(){
         if(input.value !== ''){
-            list.insertAdjacentHTML('afterbegin', `<li>`+ input.value + `</li>`)
-        } else if (input.value == ''){
-        list.insertAdjacentHTML('afterbegin', `<li>`+ "default text" + `</li>`)}
-     };
+            list.insertAdjacentHTML('afterbegin', `<li>`+ input.value + ` <span>удалить</span>` + `</li>`)  
+            showw();  
+     } else if (input.value == ''){
+        list.insertAdjacentHTML('afterbegin', `<li>`+ "default text" + ` <span>удалить</span>`+ `</li>`)}
+        showw();
+     } 
+      function showw(){
+        const spanme = document.getElementsByTagName("span");
+            for ( i =0; i < spanme.length;i++){
+            spanme[i].addEventListener('click', clearall);
+            function clearall(){
+            this.parentNode.remove(this);}
+       }
+      }
+      showw();
+     
 </script>
 </html>
